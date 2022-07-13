@@ -1,16 +1,6 @@
-import { useEffect } from "react";
-import {
-  Box,
-  Center,
-  useColorModeValue,
-  Heading,
-  Text,
-  Stack,
-  Image,
-  Input,
-  Button
-} from "@chakra-ui/react";
-import NftCollection from "../nft-collection/ntf-collection.componnet";
+import NftCollection from "../../components/nft-collection/ntf-collection.componnet";
+import './home.styles.scss';
+import NftForm from "../../components/nft-form/nft-form.component";
 
 const Home = () => {
   // useEffect(()=> {
@@ -38,9 +28,7 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-      Connect your wallet or place a wallet address
-      <Input placeholder="Wallet address"></Input>
-      <Button>Get NFTs</Button>
+      <NftForm />
       <NftCollection />
     </div>
   )

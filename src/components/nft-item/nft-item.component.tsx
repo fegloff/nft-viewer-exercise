@@ -1,51 +1,40 @@
-import {
-  Box,
-  Center,
-  useColorModeValue,
-  Heading,
-  Text,
-  Stack,
-  Image,
-} from "@chakra-ui/react";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import { NftItemType } from './nft-item.types';
+import './nft-item.styles.scss';
 
 export type NftItemProps = {
-  id: number;
-  imagePreview: string;
-  name: string;
+  nftItem: NftItemType;
+  // id: number;
+  // imagePreview: string;
+  // name: string;
 };
 
-const NftItem = ({ id, imagePreview, name }: NftItemProps) => {
+const NftItem = ({ nftItem }: NftItemProps) => {
+  const { imagePreviewUrl, name } = nftItem; 
   return (
-    <Center py={12}>
-      <Box
-        role={"group"}
-        p={6}
-        maxW={"330px"}
-        bg={useColorModeValue("white", "gray.800")}
-        boxShadow={"2xl"}
-        rounded={"lg"}
-        pos={"relative"}
-        zIndex={1}
-      >
-        <Box rounded={"lg"} mt={-12} pos={"relative"} height={"230px"}>
-          <Image
-            rounded={"lg"}
-            height={250}
-            width={250}
-            objectFit={"cover"}
-            src={imagePreview}
-          />
-        </Box>
-        <Stack pt={10} align={"center"}>
-          <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
-            ID {id}
-          </Text>
-          <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-            {name}
-          </Heading>
-        </Stack>
-      </Box>
-    </Center>
+    <Card className='card'>
+      <CardActionArea>
+        <CardMedia className="card-media"
+          component="img"
+          image={imagePreviewUrl ? imagePreviewUrl : ''}
+          alt="green iguana"
+        />
+      </CardActionArea>
+      <CardContent>
+        <Typography gutterBottom variant="h6" component="div">
+          {name}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
 export default NftItem;

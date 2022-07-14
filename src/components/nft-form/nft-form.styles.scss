@@ -1,37 +1,43 @@
-.cover-image-container {
-  min-height: 30vh;
-  background-image: url('../../assets/imgs/henry-be-IicyiaPYGGI-unsplash.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-bottom: 3vh;
-
-  
-}
-
-.form-container {
+.nft-form-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: normal;
+  height: 30vh;
+  width: 100%;
+
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 150px;
+    width: 50vh;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 2px 1px 5px grey;
+    justify-content: center;
+    align-items: center;
   
-  .flex-items:nth-child(1) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
+    .form-input {
+      border-radius: 5px;
+      width: 40vh;
+      text-align: center;
+      font-size: small;
+      border-width: 1px;
+      height: 25px;
+    }
+
+    .form-button {
+      cursor: pointer;
+      border-style: solid;
+      border-color: black;
+      border-width: 1px;
+      background-color: #565656;
+      border-radius: 15px;
+      font-size: .7rem;
+      padding: 0.6em 2em 0.35em;
+      font-weight: 700;
+      text-align: center;
+      color: white;
+      margin-top: 10px;
+    }
+  
   }
-  
-  .flex-items:nth-child(2) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }  
 }

@@ -1,8 +1,8 @@
 import react, { createContext, useState } from 'react';
 import camelcaseKeys from "camelcase-keys";
-//import { OPENSEA_DATA } from '../utils/opensea.data';
+import { OPENSEA_DATA } from '../utils/opensea/opensea.data';
 import { NftItemType } from '../components/nft-item/nft-item.types';
-import { getNftItems } from '../utils/opensea.util';
+import { getNftItems } from '../utils/opensea/opensea.util';
 
 type NftsContextType = {
   nftItems : NftItemType[];
@@ -25,7 +25,8 @@ export const NftsProvider: react.FC<Props> = ({ children }) => {
   const [ apiCallResult, setApiCallResult ] = useState(true);
 
   const getNfts = async (walletAddress: string) => {
-    const data = await getNftItems(walletAddress);
+    //const data = await getNftItems(walletAddress);
+    const data = OPENSEA_DATA.assets;
     if (data) {
       setNftItems(camelcaseKeys(data));
       setApiCallResult(true);

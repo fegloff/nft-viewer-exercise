@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { Web3ReactProvider } from '@web3-react/core';
+import { Web3Provider } from '@ethersproject/providers';
+
 import { NftsProvider } from './context/nfts.context';
-import reportWebVitals from './reportWebVitals';
+import { NftDetailProvider } from './context/nft-detail.context';
+import App from './App';
 import './index.scss';
+
+import reportWebVitals from './reportWebVitals';
+
+const getLibrary = (provider) => {
+  return new Web3Provider(provider);
+} 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NftsProvider>
-      <App />
-    </NftsProvider>
+     <Web3ReactProvider getLibrary={getLibrary}>
+      <NftsProvider>
+        <NftDetailProvider>
+          <App />
+        </NftDetailProvider>
+      </NftsProvider>
+     </Web3ReactProvider>
   </React.StrictMode>
 );
 

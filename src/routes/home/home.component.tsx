@@ -1,35 +1,20 @@
+import { useContext } from "react";
 import NftCollection from "../../components/nft-collection/ntf-collection.componnet";
-import './home.styles.scss';
 import NftForm from "../../components/nft-form/nft-form.component";
+import { NftDetailContext } from "../../context/nft-detail.context";
+import './home.styles.scss';
+
 
 const Home = () => {
-  // useEffect(()=> {
-  //   console.log("HOLA");
-  //   const getItems = async () => {
-  //     const items = await fetch('https://testnets-api.opensea.io/api/v1/assets?owner=0xb35ec98ba0a1cf6b5c1d836a818d041a7cd9aa19&order_direction=desc&offset=0&limit=20&include_orders=false')
-      
-      
-  //     //(`https://api.opensea.io/api/v1/assets?owner=0xb35ec98ba0a1cf6b5c1d836a818d041a7cd9aa19&order_direction=desc&offset=0&limit=50`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       return res.assets
-  //     })
-  //     .catch((e) => {
-  //       console.error(e)
-  //       console.error('Could not talk to OpenSea')
-  //       return null
-  //     })
-  
-  //     if (items.length === 0) { return }
-  //     console.log({items});
-  //   }
-  //   getItems();
-  // }, []);
-
+  const { nftItem } = useContext(NftDetailContext);
+  console.log('nftItem',nftItem);
   return (
     <div className='home-container'>
-      <NftForm />
+      <div className='background-img'>
+        <NftForm />
+      </div>
       <NftCollection />
+      { Object.keys(nftItem).length > 0 && (<div>hello</div>) }
     </div>
   )
 }

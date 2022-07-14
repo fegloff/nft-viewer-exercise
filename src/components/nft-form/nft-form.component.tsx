@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useWeb3React } from "@web3-react/core";
 import { NftsContext } from '../../context/nfts.context';
 import { ChangeEvent } from 'react';
 import './nft-form.styles.scss';
@@ -6,6 +7,16 @@ import './nft-form.styles.scss';
 const NftForm = () => {
   const { getNfts, apiCallResult } = useContext(NftsContext);
   const [ nftInput, setNftInput ] = useState('');
+  const { account, active } = useWeb3React();
+  
+  useEffect(()=>{
+    console.log('useEffect');
+    if (account && active) {
+      setNftInput(account);
+    } else {
+      setNftInput('');
+    }
+  },[account, active])
   
   const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,18 +28,21 @@ const NftForm = () => {
   }
   
   return (
-    <div className='cover-image-container'>
-      <form onSubmit={handleSubmit} className='form-container'>
-          <input 
-            type="text" 
-            value={nftInput} 
-            placeholder='Wallet address' 
-            onChange={handleChange} 
-            className='flex-items' 
-            required/>
-          <button type="submit" className='flex-items'>Get NFT</button>
-          { !apiCallResult && (<div>ERROR</div>)  }
-      </form>
+    <div className='nft-form-container'>
+      <div className='form-container'>
+        <form onSubmit={handleSubmit}>
+            <input 
+              type="text" 
+              value={nftInput} 
+              placeholder='Wallet address' 
+              onChange={handleChange} 
+              className='form-input' 
+              required
+              /><br />
+            <button type="submit" className='form-button'>GET NFTS</button>
+            { !apiCallResult && (<div>ERROR</div>)  }
+        </form>
+      </div>
     </div> 
   )
 }

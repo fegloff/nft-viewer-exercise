@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -10,4 +11,21 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.button {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  background-color: blue;
+  border-style: none;
+  border-radius: 20px;
+  padding: 0.8em 1.5em 0.8em;
+
+  &:hover {
+    background-color: #093CB1;
+  }
+  &:disabled {
+    background-color: #093CB1;
+  }
 }

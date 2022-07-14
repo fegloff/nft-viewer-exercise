@@ -1,0 +1,32 @@
+.header {
+  position: sticky;
+  top: 0;
+  height: 3em;
+  width: 100%;
+  display: flex;
+  //box-shadow: 2px 1px 5px grey;
+  justify-content: right;
+  align-items: center;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: rgba($color: black, $alpha: 0.1);
+  //background-color: transparent !important;
+  background-image: url('../../assets/imgs/henry-be-IicyiaPYGGI-unsplash.jpeg');
+  background-repeat: no-repeat;
+
+  .header-button {
+    cursor: pointer;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: transparent;
+    border-radius: 15px;
+    font-size: .7rem;
+    padding: 0.6em 1em 0.35em;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    margin-right: 10px;
+  }
+
+}

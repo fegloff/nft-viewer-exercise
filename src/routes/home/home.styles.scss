@@ -1,6 +1,16 @@
 .home-container {
-  margin-top: 70px;
   margin-bottom: 100px;
   width: 100%;
   align-items: center !important;
+  min-height: 75vh;
+
+  .background-img {
+    min-height: 30vh;
+    background-image: url('../../assets/imgs/henry-be-IicyiaPYGGI-unsplash.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 3vh;
+  }
+  
 }

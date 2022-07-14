@@ -1,8 +1,6 @@
-# Proof of Play Exercise
+# NFT Viewer Exercise
 
-The goal of this exercise is for you to write a project that we can then discuss as a team
-over a Zoom call. The intention is for us to see what it’s like to do a technical discussion
-together regarding something that you built
+Webpage that takes an Ethereum address as an input and pulls all of the NFTs associated with that account using the OpenSea Testnet API.
 
 ## Install instructions
 

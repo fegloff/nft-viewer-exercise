@@ -39,5 +39,18 @@
       margin-top: 10px;
     }
   
+    .chain-id-label {
+      text-align: center;
+      font-size: small;
+    }
+
+    .error-label {
+      white-space: pre-line;
+      margin-top: 5px;
+      text-align: center;
+      font-size: small;
+      font-weight: bold;
+      color: red;
+    }
   }
 }

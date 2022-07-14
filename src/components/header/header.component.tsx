@@ -7,7 +7,6 @@ const Header = () => {
   const { activate, deactivate, account, active } = useWeb3React();
 
   const handleClick = () => {
-    console.log(account);
     if (!active) {
       activate(connectors.injected);
     } else {

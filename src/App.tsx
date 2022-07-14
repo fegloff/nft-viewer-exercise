@@ -6,7 +6,7 @@ import Header from './components/header/header.component';
 const App = () => {
 
   return (
-    <div className="App">
+    <div className="app-container">
       <Header />
       <Home />
       <Footer />

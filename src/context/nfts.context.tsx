@@ -25,10 +25,10 @@ export const NftsProvider: react.FC<Props> = ({ children }) => {
   const [ apiCallResult, setApiCallResult ] = useState(true);
 
   const getNfts = async (walletAddress: string) => {
-    //const data = await getNftItems(walletAddress);
-    const data = OPENSEA_DATA.assets;
+    const data = await getNftItems(walletAddress);
+    //const data = OPENSEA_DATA.assets;
     if (data) {
-      setNftItems(camelcaseKeys(data));
+      setNftItems(camelcaseKeys(data, {deep: true}));
       setApiCallResult(true);
     } else {
       setApiCallResult(false);

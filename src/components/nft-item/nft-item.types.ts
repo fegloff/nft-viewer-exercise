@@ -1,10 +1,17 @@
+export type CreatorType = {
+  address: string | null;
+  config: string | null;
+  profileImgUrl: string | null;
+  user: string | null;
+}
+
 export type NftItemType = {
-  animationOriginalUrl: string | null | null;
+  animationOriginalUrl: string | null;
   animationUrl: string | null;
   assetContract: any | null; //{address: '0xc24c51d7943e34ba9d5eff0a32f31d5df8907d85', asset_contract_type: 'semi-fungible', created_date: '2022-02-17T16:24:21.367133', name: 'Unidentified contract', nft_version: null, …}
   backgroundColor: string | null; //null
   collection: any | null; //{banner_image_url: null, chat_url: null, created_date: '2022-02-17T16:25:53.067153', default_to_fiat: false, description: null, …}
-  creator: any | null; //{user: null, profile_img_url: 'https://storage.googleapis.com/opensea-static/opensea-profile/10.png', address: '0xb35ec98ba0a1cf6b5c1d836a818d041a7cd9aa19', config: ''}
+  creator: CreatorType | null; 
   decimals: number | null; //null
   description: string | null; // null
   externalLink: string | null; //null
@@ -30,3 +37,4 @@ export type NftItemType = {
   transferFee: any | null; //null
   transferFeePaymentToken: any | null; //null
 }
+

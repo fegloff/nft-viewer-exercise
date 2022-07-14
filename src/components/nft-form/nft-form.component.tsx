@@ -59,23 +59,25 @@ const NftForm = () => {
   }
   
   return (
-    <div className='nft-form-container'>
-      <div className='form-container'>
-        <form onSubmit={handleSubmit}>
-            <input 
-              type="text" 
-              value={nftInput} 
-              placeholder='Wallet address' 
-              onChange={handleChange} 
-              className='form-input' 
-              required
-              /><br />
-              {(account && active && nftInput) && <div className='chain-id-label'>{EthChainIdEnum[chainId!]}</div>}
-            <button type="submit" className='form-button'>GET NFTS</button>
-            { errorMessage && (<div className='error-label'>{errorMessage}</div>)  }
-        </form>
-      </div>
-    </div> 
+    <div className="nft-form-container">
+      <form onSubmit={handleSubmit} className="form-container">
+        <input
+          type="text"
+          value={nftInput}
+          placeholder="Wallet address"
+          onChange={handleChange}
+          className="form-input"
+          required
+        />
+        {account && active && nftInput && (
+          <div className="chain-id-label">{EthChainIdEnum[chainId!]}</div>
+        )}
+        <button type="submit" className="form-button">
+          GET NFTS
+        </button>
+        {errorMessage && <div className="error-label">{errorMessage}</div>}
+      </form>
+    </div>
   )
 }
 

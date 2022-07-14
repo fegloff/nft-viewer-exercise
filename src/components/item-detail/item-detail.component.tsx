@@ -21,18 +21,28 @@ const ItemDetail = () => {
       duration={0.6}
     >
       <div className="item-detail-container">
-        <img src={nftItem.imageOriginalUrl!} alt={nftItem.name!} className='nft-detail-image'/>
-        <div className='nft-detail'>
-          <h2>{nftItem.name}</h2>
-          <h4>Token ID: {nftItem.tokenId}</h4>
+        <img
+          src={nftItem.imageUrl!}
+          alt={nftItem.name!}
+          className="nft-detail-image"
+        />
+        <div className="nft-detail">
+          <div className="title">
+            <h2>
+              {nftItem.name} <br /> <span>Token ID: {nftItem.tokenId}</span>
+            </h2>
+          </div>
           <p>{nftItem.description}</p>
           {creator && (
-            <div className='creator'>
+            <div className="creator">
               <h3>Creator</h3>
-              <img src={creator.profileImgUrl!} alt='creator'/>
-              <p>{creator.address!}</p>
-            </div>)}
-          <button onClick={handleButton} className='detail-button'>Close</button>
+              <img src={creator.profileImgUrl!} alt="creator" />
+              <p><b>Creator Address</b><br/>{creator.address!}</p>
+            </div>
+          )}
+          <button onClick={handleButton} className="detail-button">
+            Close
+          </button>
         </div>
       </div>
     </Animate>

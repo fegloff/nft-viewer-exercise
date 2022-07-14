@@ -1,24 +1,12 @@
 .app-container {
-  text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.background-image-full {
-  background-image: url('./assets/imgs/henry-be-IicyiaPYGGI-unsplash.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.background-image-partial {
-  background-image: url('./assets/imgs/henry-be-IicyiaPYGGI-unsplash.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100vw;
-  height: 35vh;
+#root {
+  background-image: url(../src/assets/imgs/bg.webp);
+  background-repeat: repeat;
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {

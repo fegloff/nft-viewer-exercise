@@ -5,27 +5,22 @@ import NftCollection from "../../components/nft-collection/ntf-collection.compon
 import NftForm from "../../components/nft-form/nft-form.component";
 import { NftDetailContext } from "../../context/nft-detail.context";
 
-import './home.styles.scss';
-
+import "./home.styles.scss";
 
 const Home = () => {
-  const [ isItemDetail, setIsItemDetail ] = useState(0);
+  const [isItemDetail, setIsItemDetail] = useState(0);
   const { nftItem } = useContext(NftDetailContext);
 
-  useEffect(()=>{
-    setIsItemDetail(Object.keys(nftItem).length)
-  },[nftItem]);
+  useEffect(() => {
+    setIsItemDetail(Object.keys(nftItem).length);
+  }, [nftItem]);
 
   return (
-    <div className='home-container'>
-      <div className='background-img'>
-        <NftForm />
-      </div>
-      { isItemDetail === 0 ? 
-        (<NftCollection />) : (<ItemDetail />)
-      }
+    <div className="home-container">
+      <NftForm />
+      {isItemDetail === 0 ? <NftCollection /> : <ItemDetail />}
     </div>
-  )
-}
+  );
+};
 
 export default Home;

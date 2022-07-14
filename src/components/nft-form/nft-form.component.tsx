@@ -21,12 +21,26 @@ const NftForm = () => {
   },[account, active])
 
   useEffect(()=>{
-    console.log(apiCallResult,nftItems);
-    if (!apiCallResult) {
-      setErrorMessage('Error connecting to Opensea');
-    } else if (nftItems.length === 0) {
-      setErrorMessage('NTFs not found. Check the address and try again');
+    console.log('APiCALL',apiCallResult);
+    if (apiCallResult > 0) {
+      if (apiCallResult === 500) {
+        setErrorMessage('Error connecting to Opensea');
+        setNftInput('');
+        return;
+      }
+      if (apiCallResult === 200 && nftItems.length === 0) {
+        setErrorMessage('NTFs not found. Check the address and try again');
+        return;
+      }
+      if (apiCallResult >= 400) {
+        setErrorMessage('Bad Request');
+        setNftInput('');
+        return;
+      }
+    } else {
+      setErrorMessage('');
     }
+   
   },[apiCallResult, nftItems])
   
   const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {

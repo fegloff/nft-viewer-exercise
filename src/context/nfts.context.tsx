@@ -7,13 +7,13 @@ import { getNftItems } from '../utils/opensea/opensea.util';
 type NftsContextType = {
   nftItems : NftItemType[];
   getNfts : (address:string) => void;
-  apiCallResult: boolean;
+  apiCallResult: number;
 }
 
 export const NftsContext = createContext<NftsContextType>({
   nftItems : [],
   getNfts : () => {},
-  apiCallResult: true
+  apiCallResult: 0
 })
 
 interface Props {
@@ -22,17 +22,14 @@ interface Props {
 
 export const NftsProvider: react.FC<Props> = ({ children }) => {
   const [ nftItems, setNftItems ] = useState<NftItemType[]>([]);
-  const [ apiCallResult, setApiCallResult ] = useState(true);
-
+  const [ apiCallResult, setApiCallResult ] = useState(0);
+  
   const getNfts = async (walletAddress: string) => {
-    const data = await getNftItems(walletAddress);
+    const data = await getNftItems(walletAddress, setApiCallResult);
     //const data = OPENSEA_DATA.assets;
     if (data) {
       setNftItems(camelcaseKeys(data, {deep: true}));
-      setApiCallResult(true);
-    } else {
-      setApiCallResult(false);
-    }
+    } 
   }
 
   const value = {

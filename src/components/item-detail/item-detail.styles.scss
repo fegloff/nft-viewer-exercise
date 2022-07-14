@@ -4,12 +4,10 @@
   justify-content: center;
   height: 60vh;
   width: 100%;
-  
 
-  .nft-detail { 
-    
+  .nft-detail {
     text-align: center;
-       
+
     .detail-button {
       cursor: pointer;
       border-style: solid;
@@ -17,7 +15,7 @@
       border-width: 1px;
       background-color: transparent;
       border-radius: 15px;
-      font-size: .7rem;
+      font-size: 0.7rem;
       padding: 0.6em 3em 0.35em;
       font-weight: 700;
       text-align: center;
@@ -25,7 +23,4 @@
       margin-right: 10px;
     }
   }
-
-
-
 }

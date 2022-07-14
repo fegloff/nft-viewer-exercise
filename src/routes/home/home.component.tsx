@@ -13,7 +13,6 @@ const Home = () => {
   const { nftItem } = useContext(NftDetailContext);
 
   useEffect(()=>{
-    console.log('USE EFFECT nftItem',nftItem);
     setIsItemDetail(Object.keys(nftItem).length)
   },[nftItem]);
 

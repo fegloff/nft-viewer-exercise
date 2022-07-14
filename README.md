@@ -13,7 +13,7 @@ together regarding something that you built
 ### Commands 
 * Fetch repo
 ```
-git clone git@github.com:fegloff/exercise.git
+git clone https://github.com/fegloff/exercise.git
 ```
 * Install dependencies
 ```

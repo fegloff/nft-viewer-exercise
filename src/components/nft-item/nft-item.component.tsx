@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -16,11 +18,13 @@ export type NftItemProps = {
 const NftItem = ({ nftItem }: NftItemProps) => {
   const { imagePreviewUrl, name } = nftItem;
   const { setNftDetail } = useContext(NftDetailContext);
+  const navigate = useNavigate();
 
   const handleButton = () => {
     setNftDetail(nftItem);
+    navigate(`nft/${nftItem.id}`)
   }
-  
+
   return (
     <Card className='card'>
       <CardActionArea>

@@ -21,7 +21,6 @@ const NftForm = () => {
   },[account, active])
 
   useEffect(()=>{
-    console.log('APiCALL',apiCallResult);
     if (apiCallResult > 0) {
       if (apiCallResult === 500) {
         setErrorMessage('Error connecting to Opensea');

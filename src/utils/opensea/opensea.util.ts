@@ -1,11 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import axios from "axios";
 
-export const getData = async <T>(url: string): Promise<T> => {
-  const response = await fetch(url);
-  return await response.json();
-};
-
 export const getNftItems = async (ownerAddress: string, setApiCallResult: Dispatch<SetStateAction<number>>) => {
   const url = `${process.env.REACT_APP_OPENSEA_API}&owner=${ownerAddress}`;
   const items = await axios.get(url!)

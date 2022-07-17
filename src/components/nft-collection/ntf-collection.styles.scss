@@ -7,3 +7,28 @@
   grid-template-columns: 1.5fr 1.5fr 1.5fr; 
   gap: 15px 15px; 
 }
+
+@media (max-width: 950px) {
+  .collection-container {
+    width: 100%;
+    align-self: center !important;
+    justify-items: center; 
+    align-content: center;
+    display: grid; 
+    grid-template-columns: 1.5fr 1.5fr; 
+    gap: 15px 15px; 
+  }
+}
+
+@media (max-width: 400px) {
+  .collection-container {
+    width: 100%;
+    align-self: center !important;
+    justify-items: center; 
+    align-content: center;
+    display: grid; 
+    grid-template-columns: 1.5fr; 
+    gap: 15px 15px; 
+  }
+}
+

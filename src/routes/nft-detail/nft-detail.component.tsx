@@ -3,10 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Animate } from "react-simple-animate";
 
 import { NftDetailContext } from "../../context/nft-detail.context";
-import {
-  CreatorType,
-} from "../../components/nft-item/nft-item.types";
-
+import { CreatorType } from "../../components/nft-item/nft-item.types";
+import { truncateAddressString } from "../../utils/web3/web3.utils";
 import './nft-detail.styles.scss';
 
 const NftDetail = () => {
@@ -50,7 +48,7 @@ const NftDetail = () => {
                 <p>
                   <b>Creator Address</b>
                   <br />
-                  {creator.address!}
+                  {truncateAddressString(creator.address!,10)}
                 </p>
               </div>
             )}

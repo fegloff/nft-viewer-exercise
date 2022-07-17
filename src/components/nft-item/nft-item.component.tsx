@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { NftDetailContext } from '../../context/nft-detail.context';
@@ -28,14 +28,20 @@ const NftItem = ({ nftItem }: NftItemProps) => {
   return (
     <Card className='card'>
       <CardActionArea>
-        <CardMedia className="card-media"
-          component="img"
-          image={imagePreviewUrl ? imagePreviewUrl : ''}
-          alt="green iguana"
-        />
+        <div className="card-media">
+          <LazyLoadImage 
+            alt={name!}
+            src={imagePreviewUrl ? imagePreviewUrl : ''}
+            effect="blur"
+            width={'100%'}
+            height={'100%'}
+            style={{ borderRadius: '15px', 
+              boxShadow: '0 2px 2px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)' }}
+          />
+        </div>
       </CardActionArea>
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography gutterBottom variant="h6" component="div" textAlign={'center'}>
           {name}
         </Typography>
       </CardContent>

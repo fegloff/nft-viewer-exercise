@@ -1,3 +1,4 @@
+/** OpenSea test data  */
 export const OPENSEA_DATA = {
   "assets": [
       {

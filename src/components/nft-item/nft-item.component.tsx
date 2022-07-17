@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+
 import { NftDetailContext } from '../../context/nft-detail.context';
 import { NftItemType } from './nft-item.types';
 
@@ -15,9 +15,18 @@ export type NftItemProps = {
   nftItem: NftItemType;
 };
 
+/**
+ * Component that renders a NFT in the gallery
+ */
 const NftItem = ({ nftItem }: NftItemProps) => {
+  
+  // nftItem object to render  
   const { imagePreviewUrl, name } = nftItem;
+  
+  // Hook that store nftItem in App's state. 
   const { setNftDetail } = useContext(NftDetailContext);
+  
+  // Hook that helps App's routing.
   const navigate = useNavigate();
 
   const handleButton = () => {

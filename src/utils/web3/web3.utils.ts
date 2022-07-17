@@ -1,4 +1,10 @@
-export const truncateAddressString = (address: string, num = 12) => {
+/**
+ * Truncate wallet address 
+ * @param address {string} Wallet address
+ * @param num {number} digits to show at the benging/end of wallet address
+ * @returns {string} truncated address
+ */
+export const truncateAddressString = (address: string, num = 12) : string => {
   if (!address) {
     return '';
   }
@@ -7,6 +13,7 @@ export const truncateAddressString = (address: string, num = 12) => {
   return `${first}...${last}`;
 }
 
+/** ChainID Enum */
 export enum EthChainIdEnum {
   Mainnet = 1,
   Ropsten = 3,

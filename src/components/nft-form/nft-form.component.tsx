@@ -1,15 +1,34 @@
 import { useContext, useEffect, useState } from 'react';
 import { ChangeEvent } from 'react';
 import { useWeb3React } from "@web3-react/core";
+
 import { isAddress } from 'ethers/lib/utils';
 import { NftsContext } from '../../context/nfts.context';
 import { EthChainIdEnum } from '../../utils/web3/web3.utils';
+import AlertDialog from '../alert-dialog/alert-dialog.component';
+
 import './nft-form.styles.scss';
 
+
+/**
+ * Component form that allows search for NFTs of a given wallet address
+ */
 const NftForm = () => {
+  /**
+   * GetNfts: make API Calls to OpenSean endpoint
+   * nftItems: Array of Nfts
+   * apiCallResult: API response code.
+   */
   const { getNfts, nftItems, apiCallResult } = useContext(NftsContext);
+  /** Handles form input state */
   const [ nftInput, setNftInput ] = useState('');
+   /** Handles errorMessage state */
   const [ errorMessage, setErrorMessage ] = useState('');
+   /**
+    * account: Wallet account address 
+    * active: Wallet connection status
+    * chainId: Wallet's chainId
+    */
   const { account, active, chainId } = useWeb3React();
   
   useEffect(()=>{
@@ -49,7 +68,7 @@ const NftForm = () => {
       setErrorMessage('');
     } else {
       setNftInput('');
-      setErrorMessage(`${nftInput}\nIncorrect Address`);
+      setErrorMessage(`[${nftInput}] Incorrect Address`);
     }
   }
 
@@ -74,8 +93,8 @@ const NftForm = () => {
         <button type="submit" className="form-button">
           GET NFTS
         </button>
-        {errorMessage && <div className="error-label">{errorMessage}</div>}
       </form>
+      {errorMessage && <AlertDialog errorMessage={errorMessage} openAction={true} />}
     </div>
   )
 }

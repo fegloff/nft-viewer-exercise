@@ -7,9 +7,15 @@ import { CreatorType } from "../../components/nft-item/nft-item.types";
 import { truncateAddressString } from "../../utils/web3/web3.utils";
 import './nft-detail.styles.scss';
 
+/**
+ * Component that display nft item detail 
+ */
 const NftDetail = () => {
+  /** The nft item to display */
   const { nftItem } = useContext(NftDetailContext);
+  /** Navigation Hook to return to home page */
   const navigate = useNavigate();
+  /** Creator object that stores nft creator info */
   const creator: CreatorType | null = nftItem ? nftItem.creator! : null;
 
   const handleButton = () => {

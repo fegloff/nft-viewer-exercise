@@ -3,9 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Home from './routes/home/home.component';
 import Footer from './components/footer/footer.component';
 import Header from './components/header/header.component';
+import NftDetail from "./routes/nft-detail/nft-detail.component";
 
 import './App.scss';
-import NftDetail from "./routes/nft-detail/nft-detail.component";
+
 const App = () => {
 
   return (
@@ -15,7 +16,6 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='nft/:id' element={<NftDetail />} /> 
       </Routes>
-      {/* <Home /> */}
       <Footer />
     </div>
   );

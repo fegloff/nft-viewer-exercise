@@ -3,6 +3,9 @@ import NftForm from "../../components/nft-form/nft-form.component";
 
 import "./home.styles.scss";
 
+/**
+ * Component that display home page 
+ */
 const Home = () => {
 
   return (

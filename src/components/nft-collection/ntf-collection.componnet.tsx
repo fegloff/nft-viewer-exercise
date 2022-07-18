@@ -7,7 +7,7 @@ import "./ntf-collection.styles.scss";
  * Component that renders a list of Nfts stored in App's state.
  */
 const NftCollection = () => {
-  // nft list to be rendered.
+  /** nft list to be rendered. */
   const { nftItems } = useContext(NftsContext);
   
   return (

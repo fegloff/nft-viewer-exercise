@@ -20,13 +20,13 @@ export type NftItemProps = {
  */
 const NftItem = ({ nftItem }: NftItemProps) => {
   
-  // nftItem object to render  
+  /** nftItem object to render */   
   const { imagePreviewUrl, name } = nftItem;
   
-  // Hook that store nftItem in App's state. 
+  /** Hook that store nftItem in App's state. */
   const { setNftDetail } = useContext(NftDetailContext);
   
-  // Hook that helps App's routing.
+  /** Hook that helps App's routing. */
   const navigate = useNavigate();
 
   const handleButton = () => {

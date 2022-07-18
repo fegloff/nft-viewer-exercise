@@ -24,7 +24,6 @@
     "react-dom": "^18.2.0",
     "react-lazy-load-image-component": "^1.5.4",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
     "react-simple-animate": "^3.5.0",
     "sass": "^1.53.0",
     "typescript": "^4.7.4",
@@ -55,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-lazy-load-image-component": "^1.5.2"
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "react-scripts": "5.0.1"
   }
 }
